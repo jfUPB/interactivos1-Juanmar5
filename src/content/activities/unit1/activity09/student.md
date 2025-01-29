@@ -9,9 +9,10 @@ function setup() {
 function draw(){
   background(0);
 
-  
+  for (i = 0; i < 20; i++) {
   fill(random(100, 255), random(100, 255), random(100, 255));
-  ellipse(width / random(1, 5), height / random(1, 5), random(100, 200), random(100, 200));
+  ellipse(random(0, width), random(0, height), random(30, 100), 100);
+  }
   
 }
 
