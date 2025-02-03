@@ -1,7 +1,8 @@
 #### Mi código
 ##### Sé que es un poco similar al código de la actividad, me guié por eso
 
-´´´ p5.js
+``` js
+
 let port;
 let connectBtn;
 
@@ -51,5 +52,3 @@ function connectBtnClick() {
         port.close();
     }
 }
-
-´´´
