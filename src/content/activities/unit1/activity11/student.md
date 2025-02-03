@@ -1,6 +1,6 @@
 ### Mi Código
 
-´´´ js
+``` js
 
 
 let port;
@@ -51,3 +51,4 @@ function connectBtnClick() {
         port.close();
     }
 }
+```
