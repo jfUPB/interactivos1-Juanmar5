@@ -1,0 +1,13 @@
+¿Qué querías comprobar?
+Cómo puedo verificar qué botón está siendo presionado en el micro:bit y relacionarlo al logo?
+¿Cuál fue tu hipótesis?
+en javascript se podría hacer que presionar los botones A y B generen una imagen en un círculo dibujado sumado a que convoquen una figura que se muestre con las luces del micro:bit, así poder conocer qué botón
+está siendo presionado y cómo afecta al micro:bit 
+Los códigos involucrados en el experimento
+...
+Descripción de lo resultados
+...
+Análisis de esos resultados
+...
+Conclusiones
+...
