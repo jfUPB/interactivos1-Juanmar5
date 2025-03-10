@@ -10,13 +10,12 @@ sequence = ["A", "B", "A", "SHAKE"]
 input_sequence = []
 
 def mostrar_tiempo():
-    display.show(str(tiempo))  # Muestra el tiempo completo
-
+    display.show(str(tiempo)) 
 def resetear():
     global estado, tiempo, input_sequence
     estado = "CONFIGURACION"
     tiempo = 20
-    input_sequence = []  # Reinicia la secuencia
+    input_sequence = []  # Reinicia secuencia
     display.clear()
 
 while True:
@@ -38,7 +37,7 @@ while True:
             display.clear()
 
     elif estado == "CUENTA_REGRESIVA":
-        while tiempo > 0:  # Hacemos que la cuenta regresiva se maneje en un bucle separado
+        while tiempo > 0:  
             if button_a.was_pressed():
                 input_sequence.append("A")
                 sleep(200)
@@ -49,16 +48,15 @@ while True:
                 input_sequence.append("SHAKE")
                 sleep(200)
 
-            # Mantener la lista del mismo tamaño que la secuencia esperada
             if len(input_sequence) > len(sequence):
                 input_sequence.pop(0)
 
-            # Verificar si la secuencia es correcta
+            # Verificar secuencia
             if input_sequence == sequence:
                 resetear()
                 break  # Salir del bucle de cuenta regresiva
 
-            # Mostrar el tiempo restante
+           
             mostrar_tiempo()
             sleep(1000)
             tiempo -= 1
