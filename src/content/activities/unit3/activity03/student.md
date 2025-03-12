@@ -1,4 +1,4 @@
-## WIP, le falta trabajo a esto
+## Código
 
 ``` micro python
 
@@ -11,7 +11,7 @@ tiempo = 20
 sequence = ["A", "B", "A", "S"]
 input_sequence = []
 
-# Variables de eventos
+
 evento_recibido = False  # Indica si hay un evento pendiente
 evento = ""  # Almacena el evento recibido
 
@@ -29,7 +29,7 @@ def resetear():
 
 
 def tareaEventos():
-    """Detecta eventos de botones, shake o del puerto serial y los almacena."""
+    """Detecta eventos de entrada y almacena."""
     global evento_recibido, evento
 
     if button_a.was_pressed():
@@ -40,6 +40,9 @@ def tareaEventos():
         evento_recibido = True
     elif accelerometer.was_gesture("shake"):
         evento = "S"
+        evento_recibido = True
+    elif pin_logo.is_touched():
+        evento = "T"
         evento_recibido = True
 
     # Leer desde el puerto serial
@@ -52,7 +55,7 @@ def tareaEventos():
 
 
 def tareaBomba():
-    """Gestiona la lógica de la bomba basándose en eventos."""
+    """Gestiona lógica de bomba según eventos."""
     global estado, tiempo, evento_recibido, evento
 
     if estado == "CONFIGURACION":
@@ -72,6 +75,10 @@ def tareaBomba():
         evento_recibido = False  # Consumir el evento
 
     elif estado == "CUENTA_REGRESIVA":
+
+        if evento == "T":
+            resetear()
+        
         if evento_recibido:
             input_sequence.append(evento)
             if len(input_sequence) > len(sequence):
@@ -92,6 +99,9 @@ def tareaBomba():
         display.show(Image.NO)
         music.play(music.WAWAWAWAA)
         sleep(2000)
+        resetear()
+
+    if evento == "T":
         resetear()
 
 
