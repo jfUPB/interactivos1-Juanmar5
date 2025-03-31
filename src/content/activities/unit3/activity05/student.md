@@ -1,0 +1,1 @@
+Imagen adjunta en assets
