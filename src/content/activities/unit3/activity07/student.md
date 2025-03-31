@@ -1,3 +1,6 @@
+### Código de p5.js
+
+``` js
 let estado = "CONFIGURACION";
 let tiempo = 20;
 let sequence = ["A", "B", "A", "S"];
@@ -64,3 +67,5 @@ function resetear() {
     tiempo = 20;
     input_sequence = [];
 }
+```
+````
