@@ -20,3 +20,6 @@ Podría ocurrir porque se están leyendo 6 bytes en el momento incorrecto.
 El nuevo código reemplaza la lectura textual de líneas con comas por un manejo binario robusto con readSerialData(), 
 usando serialBuffer, validación de encabezado 0xAA, y verificación de checksum.
 Elimina Split y Trim así como el mensaje de que no hay datos recibidos del micro:bit.
+
+
+- Adjunta imagen U5A3
